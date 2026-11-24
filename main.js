@@ -55,9 +55,10 @@ void main() {
 
   vec3 base = uSolidColor;
   if (uMapping == 1) {
-    vec3 rock = texture(uTexture, vTexCoord).rgb;
-    float snow = smoothstep(0.65, 0.80, vTexCoord.y);
-    base = mix(rock, vec3(0.95), snow);
+    // vec3 rock = texture(uTexture, vTexCoord).rgb;
+    // float snow = smoothstep(0.65, 0.80, vTexCoord.y);
+    // base = mix(rock, vec3(0.95), snow);
+    base = texture(uTexture, vTexCoord).rgb;
   }
 
   vec3 ambient  = uKa * base;
